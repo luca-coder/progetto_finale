@@ -12,17 +12,17 @@ public class MainBacktracking {
 
     public MainBacktracking() {
 
-        N =caricaScacchiera();
+        N = caricaScacchiera();
 
         int[][] scacchiera = generaMatrice();
-        risolvi(scacchiera, 0 );
+        risolvi(scacchiera, 0);
 
         stampaSoluzione(scacchiera);
         System.out.println("numero di tentativi effettutati: " + posizionamentiTentati);
         System.out.println("numero di spostamenti di regine effettutati: " + regineSpostate);
     }
 
-    private static int[][] generaMatrice(){
+    private static int[][] generaMatrice() {
         int[][] scacchiera = new int[N][N];
 
         for (int i = 0; i < N; i++) {
@@ -98,15 +98,15 @@ public class MainBacktracking {
         return false;
     }
 
-    private static void calcolaPosizionamentiTentati(){
+    private static void calcolaPosizionamentiTentati() {
         posizionamentiTentati += 1;
     }
 
-    private static void calcolaRegineSpostate(){
+    private static void calcolaRegineSpostate() {
         regineSpostate += 1;
     }
 
-    private static int caricaScacchiera(){
+    private static int caricaScacchiera() {
         System.out.println("Inserisci la dimensione della scacchiera");
         return new Scanner(System.in).nextInt();
     }

@@ -8,11 +8,11 @@ public class MainForwardChecking {
 
     static int regineSpostate = 0;
 
-    static int N ;
+    static int N;
 
     public MainForwardChecking() {
 
-        N =caricaScacchiera();
+        N = caricaScacchiera();
 
         int[] regine = new int[N];
 
@@ -31,7 +31,8 @@ public class MainForwardChecking {
                 matrice[i][j] = 0;
             }
         }
-        risolvi(matrice, dominio, regine, 0);;
+        risolvi(matrice, dominio, regine, 0);
+        ;
 
         System.out.println("Soluzione trovata");
         stampaSoluzione(matrice);
@@ -39,7 +40,7 @@ public class MainForwardChecking {
         System.out.println("numero di spostamenti di regine effettuati: " + regineSpostate);
     }
 
-    private static boolean risolvi(int[][] matrice, int[][] dominio, int[] regine, int pos){
+    private static boolean risolvi(int[][] matrice, int[][] dominio, int[] regine, int pos) {
         if (pos == N)
             return true;
 
@@ -146,15 +147,15 @@ public class MainForwardChecking {
         }
     }
 
-    private static void calcolaPosizionamentiTentati(){
+    private static void calcolaPosizionamentiTentati() {
         posizionamentiTentati += 1;
     }
 
-    private static void calcolaRegineSpostate(){
+    private static void calcolaRegineSpostate() {
         regineSpostate += 1;
     }
 
-    private static int caricaScacchiera(){
+    private static int caricaScacchiera() {
         System.out.println("Inserisci la dimensione della scacchiera");
         return new Scanner(System.in).nextInt();
     }

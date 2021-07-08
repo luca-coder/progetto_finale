@@ -1,4 +1,5 @@
 package nRegine;
+
 import java.util.Scanner;
 
 public class Hill {
@@ -9,7 +10,7 @@ public class Hill {
 
         int riavvii = 0;
 
-        N =caricaScacchiera();
+        N = caricaScacchiera();
 
         int[] regine = new int[N];
 
@@ -23,7 +24,7 @@ public class Hill {
 
         boolean risolto = risolvi(scacchiera, regine, calcolaCosto(scacchiera, regine));
 
-        while (!risolto){
+        while (!risolto) {
             riavvii += 1;
             risolto = risolvi(scacchiera, regine, calcolaCosto(scacchiera, regine));
         }
@@ -64,18 +65,18 @@ public class Hill {
         return false;
     }
 
-    public static int calcolaMigliorePosizione(int [][] scacchiera, int [] regine, int [] regineTemporanee, int costoAttuale){
+    public static int calcolaMigliorePosizione(int[][] scacchiera, int[] regine, int[] regineTemporanee, int costoAttuale) {
         int costoCorrente;
         int pos = 0;
         int colonna;
         int colonnaMigliore = -1;
-        for ( colonna = 0; colonna < N; colonna++) {
+        for (colonna = 0; colonna < N; colonna++) {
             for (int i = 0; i < regine[colonna]; i++) {
                 regineTemporanee[colonna] = i;
                 azzeraMatrice(scacchiera);
                 generaSchieramento(regineTemporanee, scacchiera);
                 costoCorrente = calcolaCosto(scacchiera, regineTemporanee);
-                if (costoCorrente < costoAttuale){
+                if (costoCorrente < costoAttuale) {
                     costoAttuale = costoCorrente;
                     pos = i;
                     colonnaMigliore = colonna;
@@ -88,7 +89,7 @@ public class Hill {
                 azzeraMatrice(scacchiera);
                 generaSchieramento(regineTemporanee, scacchiera);
                 costoCorrente = calcolaCosto(scacchiera, regineTemporanee);
-                if (costoCorrente < costoAttuale){
+                if (costoCorrente < costoAttuale) {
                     costoAttuale = costoCorrente;
                     pos = j;
                     colonnaMigliore = colonna;
@@ -156,7 +157,7 @@ public class Hill {
         }
     }
 
-    private static int caricaScacchiera(){
+    private static int caricaScacchiera() {
         System.out.println("Inserisci la dimensione della scacchiera");
         return new Scanner(System.in).nextInt();
     }
