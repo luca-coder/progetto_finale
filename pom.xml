@@ -59,8 +59,6 @@
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
                     <failsOnError>true</failsOnError>
-                    <consoleOutput>true</consoleOutput>
-                    <failOnViolation>false</failOnViolation>
                 </configuration>
                 <executions>
                     <execution>
